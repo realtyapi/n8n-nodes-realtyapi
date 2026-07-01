@@ -4,17 +4,22 @@ An [n8n](https://n8n.io) community node for **[RealtyAPI](https://realtyapi.io)*
 RealtyAPI's 33 real-estate providers (Zillow, Redfin, Realtor, Zoopla, Rightmove, Bayut, and more)
 and 400+ endpoints directly from your workflows.
 
-## How it works
+## Usage
 
-The node is **dynamic**. It reads RealtyAPI's live catalog at edit time, so:
+Pull real-estate data — property listings, valuations, agent and owner details, market stats, and
+more — from 33 providers (Zillow, Redfin, Realtor, Zoopla, Rightmove, Bayut, and more) without
+writing a single HTTP request.
 
-- **API** dropdown lists every published provider.
-- **Endpoint** dropdown lists that provider's endpoints.
-- **Parameters** are generated from the selected endpoint's schema (required/optional, enums, and
-  correct query / path / header / body placement).
+Add the **RealtyAPI** node to a workflow, then:
 
-New providers and endpoints appear automatically — no node update required. Requests are proxied
-to `https://<provider>.realtyapi.io` with your key sent as the `x-realtyapi-key` header.
+1. **Pick a provider** from the API dropdown (e.g. Zillow).
+2. **Pick an endpoint** from the Endpoint dropdown (e.g. "By Property Address").
+3. **Fill in the fields** the node shows for that endpoint — required and optional inputs appear
+   automatically, with dropdowns for any preset choices.
+4. **Run it.** The results flow straight into the next node in your workflow.
+
+Every provider and endpoint RealtyAPI offers is available in the dropdowns, and new ones show up on
+their own — so you always have the full, up-to-date catalog.
 
 ## Installation
 
