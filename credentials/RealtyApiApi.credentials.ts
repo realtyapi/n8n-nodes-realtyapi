@@ -1,5 +1,6 @@
 import type {
 	IAuthenticateGeneric,
+	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
 } from 'n8n-workflow';
@@ -32,6 +33,17 @@ export class RealtyApiApi implements ICredentialType {
 			headers: {
 				'x-realtyapi-key': '={{$credentials.apiKey}}',
 			},
+		},
+	};
+
+	// n8n's "Test" button hits the gateway root with the key applied. A valid key
+	// returns HTTP 200 ({"message":"API is running"}); a missing key returns 401 and
+	// an invalid/inactive key returns 402 — both surfaced by n8n as invalid. The root
+	// is not a metered endpoint, so testing a credential costs no API credits.
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://zillow.realtyapi.io',
+			url: '/',
 		},
 	};
 }

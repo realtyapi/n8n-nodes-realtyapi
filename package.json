@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-realtyapi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "n8n community node for RealtyAPI — call any of 33 real-estate providers (Zillow, Redfin, Realtor, Zoopla, Rightmove, Bayut, and more) and 400+ endpoints from your workflows.",
   "keywords": [
     "n8n-community-node-package",
